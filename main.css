@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Manege Demo';
+    src: url('/Manege Demo Light.otf');  ;
+}
+
 p,li {
    font-family: 'Manege Demo';
    color: black;
