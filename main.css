@@ -11,10 +11,7 @@ p,li {
    line-height: 120%;
    margin-top: 0px;
    margin-left: 0px;
-}
-
-.chto {
-  max-width: 900px;
+   color:white;
 }
 
 body {
@@ -23,19 +20,20 @@ body {
     padding-top: 10px;
     margin-left: 0px;
     padding-left: 20px;
+    background-color: black;
 }
 
 img {
     width: 0.5em;
     margin-right: 0.2em;
     margin-left: 0.2em;
-
+    background-blend-mode:darken;
 }
 
 A {
-  color: blue;
+  color: white;
   text-decoration: none;
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid white;
 }
 
 .soc {
@@ -63,6 +61,7 @@ h2 {
   font-size: 2.4vw;
   font-weight: 100;
   margin-bottom: 0px;
+  color: white;
 
 }
 
