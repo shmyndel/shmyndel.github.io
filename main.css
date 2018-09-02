@@ -11,7 +11,6 @@ p,li {
    line-height: 120%;
    margin-top: 0px;
    margin-left: 0px;
-   color:white;
 }
 
 body {
@@ -20,7 +19,8 @@ body {
     padding-top: 10px;
     margin-left: 0px;
     padding-left: 20px;
-    background-color: black;
+    background-color: grey;
+    color:black;
 }
 
 img {
@@ -55,93 +55,9 @@ h2 {
   font-size: 2.4vw;
   font-weight: 100;
   margin-bottom: 0px;
-  color: white;
 
 }
 
 .col_2 {
   margin-bottom: 3em;
-}
-
-$link-color: blue;
-$linkAnimationSpeed: 0.3s;
-$text-color: rgba(0,0,0,0.9);
-//Style one
-//Psuedoelements for before and after
-.link-style-1 {
-	a {
-		color: $text-color;
-		text-decoration: none;
-		position: relative;
-		white-space: nowrap;
-		transition: color $linkAnimationSpeed;
-		&:after,
-		&:before {
-			content: '';
-			display: block;
-			position: absolute;
-			//width:100%;
-			left: (-2/16) * 1em;
-			right: (-2/16) * 1em;
-			z-index: -1;
-		}
-		&:before {
-			background-color: $text-color;
-			bottom: (-1/16) * 1em;
-			height: 1px;
-		}
-		&:after {
-			background-color: $link-color;
-			animation: linkUnderlineOut $linkAnimationSpeed forwards;		
-			top:0;
-			bottom: 0;
-			height: 100%;
-			transform-origin: bottom left;
-			transform: scaleY(0);
-		}
-	}
-
-	a:hover {
-
-		color: white;
-
-		&:before {
-
-			background-color: $link-color;
-
-		}
-
-		&:after {
-
-			animation: linkUnderlineIn $linkAnimationSpeed forwards;
-
-		}
-	}
-
-	@keyframes linkUnderlineIn {
-		0% {
-			transform: scaleY(0);
-		}
-		50% {
-			transform: scaleY(1.1);
-		}
-		63% {
-			transform: scaleY(0.9);
-		}
-		88% {
-			transform: scaleY(1.05);
-		}
-		100% {
-			transform: scaleY(1);
-		}
-	}
-
-	@keyframes linkUnderlineOut {
-		0% {
-			transform: scaleY(1);
-		}
-		100% {
-			transform: scaleY(0);
-		}
-	}
 }
