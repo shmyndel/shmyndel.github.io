@@ -1,10 +1,10 @@
 @font-face {
-    font-family: Manege Demo;
-    src: url('Manege Demo Light.otf');
+    font-family: Panama;
+    src: url('PanamaRegular.otf');
 }
 
 p,li {
-   font-family: 'Manege Demo';
+   font-family: 'Panama';
    color: black;
    font-size: 5.9vw;
    font-weight: 100;
