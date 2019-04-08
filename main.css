@@ -21,7 +21,8 @@ body {
     padding-left: 20px;
     background-color: #f4f4f4;
     color:#000000;
-    transition: 5s;
+    transition-property: background-color;
+    transition-duration: 2s;
 }
 
 img {
@@ -67,4 +68,10 @@ a {
     color:#000;
     text-decoration: none;
     border-bottom: 1px solid #000;
+}
+
+.blur {
+  filter: blur(0px);
+  transition-property: filter;
+  transition-duration: 0.2s;
 }
