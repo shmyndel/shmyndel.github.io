@@ -37,7 +37,6 @@ img {
 .soc {
   display: inline;
   margin-right: 1.6em;
-  font-family: 'Souyz', monospace;
   font-size: 2.4vw;
 }
 
@@ -76,4 +75,8 @@ a {
   filter: blur(0px);
   transition-property: filter;
   transition-duration: 0.2s;
+}
+
+hr {
+  color: #000;
 }
