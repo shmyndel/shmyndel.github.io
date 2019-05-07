@@ -1,10 +1,12 @@
 @font-face {
-    font-family: Panama;
-    src: url('PanamaRegular.otf');
+  font-family: 'Soyuz';
+  src: url('Soyuz Grotesk Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 p,li {
-   font-family: 'Panama';
+   font-family: 'Soyuz';
    color: black;
    font-size: 5.9vw;
    font-weight: 100;
@@ -35,7 +37,7 @@ img {
 .soc {
   display: inline;
   margin-right: 1.6em;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Souyz', monospace;
   font-size: 2.4vw;
 }
 
@@ -53,7 +55,7 @@ img {
 }
 
 h2 {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'Soyuz', monospace;
   font-size: 2.4vw;
   font-weight: 100;
   margin-bottom: 0px;
