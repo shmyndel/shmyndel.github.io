@@ -77,10 +77,10 @@ hr {
 }
 
 video {
- width:100%;
- margin: auto;
+ width: 92%;
+ top:3em;
+ left:4%;
  z-index: 0;
- display: block;
  position: fixed;
 }
 
