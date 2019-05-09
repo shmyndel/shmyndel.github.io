@@ -27,7 +27,7 @@ document.querySelector('.currentYear').innerText = yyyy;
 document.addEventListener('scroll', () => {
 		var content = document.getElementById('content');
 		var video = document.getElementById('wow');
-		var blo = document.documentElement.scrollTop/10;
+		var blo = document.documentElement.scrollTop/30;
 		console.log(blo);
 		video.style.filter = `blur(${blo}px)`;
 });
