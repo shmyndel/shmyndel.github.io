@@ -16,15 +16,10 @@ p,li {
 }
 
 body {
-    padding-left: 30px;
-    padding-right: 30px;
     padding-top: 10px;
     margin-left: 0px;
-    padding-left: 20px;
-    background-color: #f4f4f4;
+    background-color: rgb(166,150,252);
     color:#000000;
-    transition-property: background-color;
-    transition-duration: 2s;
 }
 
 img {
@@ -43,7 +38,7 @@ img {
 .social {
   position: fixed;
   left: 20px;
-  bottom: 10px;
+  top: 10px;
   max-width: 900px;
 }
 
@@ -62,7 +57,7 @@ h2 {
 }
 
 .col_2 {
-  margin-bottom: 3em;
+  margin-bottom: 1em;
 }
 
 a {
@@ -78,5 +73,20 @@ a {
 }
 
 hr {
-  color: #000;
+  border-color: black;
+}
+
+video {
+ width:100%;
+ margin: auto;
+ z-index: 0;
+ display: block;
+ position: fixed;
+}
+
+#content {
+  margin-top: 70%;
+  z-index: 1;
+  padding-left: 20px;
+  padding-right: 20px;
 }
