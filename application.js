@@ -23,11 +23,10 @@ var yyyy = today.getFullYear();
 
 document.querySelector('.currentYear').innerText = yyyy;
 
-//
+//blured scroll
 document.addEventListener('scroll', () => {
 		var content = document.getElementById('content');
 		var video = document.getElementById('wow');
-		var blo = document.documentElement.scrollTop/30;
-		console.log(blo);
-		video.style.filter = `blur(${blo}px)`;
+		var blur = document.documentElement.scrollTop/70 || document.body.scrollTop/70;
+		video.style.filter = `blur(${blur}px)`;
 });
