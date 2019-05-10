@@ -82,6 +82,13 @@ video {
  left:4%;
  z-index: 0;
  position: fixed;
+ opacity: 1;
+ transition: 3s opacity;
+}
+
+video.fade-out {
+    opacity: 0;
+    transition: none;
 }
 
 #content {
