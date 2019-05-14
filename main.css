@@ -96,4 +96,5 @@ video.fade-out {
   z-index: 1;
   padding-left: 4%;
   padding-right: 4%;
+  will-change: transform;
 }
