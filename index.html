@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
 </head>
 <body>
-    <video id = 'wow' src="Video-final.mp4" playsinline autoplay muted loop></video>
+    <div id = 'container'></div>
     <div id = 'content'>
       <div class = "chto blur">
         <p> Roman Kirianov is a&nbsp;product&nbsp;designer currently living and working in Moscow</p>
@@ -43,6 +43,132 @@
       
 
     <script src="application.js" type="text/javascript" charset="utf-8" async defer></script>
+
+    <script src="three.js"></script>
+
+		<script src="OrbitControls.js"></script>
+
+		<script src="OBJLoader.js"></script>
+
+		<script src="WebGL.js"></script>
+
+    <script>
+
+			if ( WEBGL.isWebGLAvailable() === false ) {
+
+				document.body.appendChild( WEBGL.getWebGLErrorMessage() );
+
+			}
+
+			var container;
+
+			var camera, scene, renderer;
+
+			var pointLight;
+
+			init();
+			animate();
+
+			function init() {
+
+				var jopa = document.getElementById('container');
+
+				container = document.createElement( 'div' );
+				jopa.appendChild( container );
+
+				camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 5000 );
+				camera.position.z = 4500;
+
+				//cubemap
+				var head;
+				var path = 'cube/SwedishRoyalCastle/';
+				var format = '.jpg';
+				var urls = [
+					path + 'px' + format, path + 'nx' + format,
+					path + 'py' + format, path + 'ny' + format,
+					path + 'pz' + format, path + 'nz' + format
+				];
+
+				var reflectionCube = new THREE.CubeTextureLoader().load( urls );
+				reflectionCube.format = THREE.RGBFormat;
+
+				var refractionCube = new THREE.CubeTextureLoader().load( urls );
+				refractionCube.mapping = THREE.CubeRefractionMapping;
+				refractionCube.format = THREE.RGBFormat;
+
+				scene = new THREE.Scene();
+				scene.background = new THREE.Color(0xa696fc);
+
+				//lights
+				var ambient = new THREE.AmbientLight( 0xffffff );
+				scene.add( ambient );
+
+				pointLight = new THREE.PointLight( 0xffffff, 2 );
+				scene.add( pointLight );
+
+				//materials
+				var cubeMaterial3 = new THREE.MeshLambertMaterial( { color: 0xff6600, envMap: reflectionCube, combine: THREE.MixOperation, reflectivity: 0.3 } );
+				var cubeMaterial2 = new THREE.MeshLambertMaterial( { color: 0xffee00, envMap: refractionCube, refractionRatio: 0.95 } );
+				var cubeMaterial1 = new THREE.MeshLambertMaterial( { color: 0xffffff, envMap: reflectionCube } );
+
+				//models
+				var objLoader = new THREE.OBJLoader();
+
+				objLoader.setPath( 'male02/' );
+				objLoader.load( 'form.obj', function ( object ) {
+
+					var head = object.children[ 0 ];
+
+					head.scale.multiplyScalar( 15 );
+					head.position.y = 0;
+					head.material = cubeMaterial1;
+
+					head.rotation = Math.random;
+
+
+					scene.add( head );
+
+				} );
+
+				//renderer
+				renderer = new THREE.WebGLRenderer();
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight);
+				container.appendChild( renderer.domElement );
+
+				//controls
+				var controls = new THREE.OrbitControls( camera, renderer.domElement );
+				controls.enableZoom = false;
+				controls.enablePan = false;
+				controls.minPolarAngle = Math.PI / 4;
+				controls.maxPolarAngle = Math.PI / 1.5;
+
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+
+				render();
+
+			}
+
+			function render() {
+
+				renderer.render( scene, camera );
+
+			}
+
+		</script>
 
 </body>
 </html>

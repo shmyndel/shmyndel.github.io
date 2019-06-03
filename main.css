@@ -76,10 +76,9 @@ hr {
   border-color: black;
 }
 
-video {
+#container{
  width: 92%;
  top:3em;
- left:4%;
  z-index: 0;
  position: fixed;
  opacity: 1;

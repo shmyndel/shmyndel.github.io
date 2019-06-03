@@ -24,7 +24,7 @@ var yyyy = today.getFullYear();
 document.querySelector('.currentYear').innerText = yyyy;
 
 //blured scroll
-var video = document.getElementById('wow');
+var video = document.getElementById('container');
 
 document.addEventListener('scroll', () => {
 		var content = document.getElementById('content');
