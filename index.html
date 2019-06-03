@@ -61,6 +61,7 @@
 			}
 
 			var container;
+			var controls;
 
 			var camera, scene, renderer;
 
@@ -137,15 +138,15 @@
 				container.appendChild( renderer.domElement );
 
 				//controls
-				var controls = new THREE.OrbitControls( camera, renderer.domElement );
+				controls = new THREE.OrbitControls( camera, renderer.domElement );
 				controls.enableZoom = false;
 				controls.enablePan = false;
+				controls.autoRotate = true;
+				controls.autoRotateSpeed = 10.0;
 				controls.minPolarAngle = Math.PI / 4;
 				controls.maxPolarAngle = Math.PI / 1.5;
 
 			}
-	    
-	    		window.addEventListener( 'resize', onWindowResize, false );
 
 			function onWindowResize() {
 
@@ -161,6 +162,7 @@
 				requestAnimationFrame( animate );
 
 				render();
+				controls.update();
 
 			}
 
@@ -169,6 +171,8 @@
 				renderer.render( scene, camera );
 
 			}
+
+            window.addEventListener('resize', onWindowResize);
 
 		</script>
 
