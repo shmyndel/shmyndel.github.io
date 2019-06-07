@@ -62,6 +62,7 @@
 
 			var container;
 			var controls;
+			var head;
 
 			var camera, scene, renderer;
 
@@ -81,7 +82,6 @@
 				camera.position.z = 4500;
 
 				//cubemap
-				var head;
 				var path = 'cube/SwedishRoyalCastle/';
 				var format = '.jpg';
 				var urls = [
@@ -118,13 +118,14 @@
 				objLoader.setPath( 'male02/' );
 				objLoader.load( 'form.obj', function ( object ) {
 
-					var head = object.children[ 0 ];
+					head = object.children[ 0 ];
 
 					head.scale.multiplyScalar( 15 );
 					head.position.y = 0;
 					head.material = cubeMaterial1;
 
-					head.rotation = Math.random;
+					head.rotation.x = Math.random();
+					head.rotation.y = Math.random();
 
 
 					scene.add( head );
@@ -141,8 +142,6 @@
 				controls = new THREE.OrbitControls( camera, renderer.domElement );
 				controls.enableZoom = false;
 				controls.enablePan = false;
-				controls.autoRotate = true;
-				controls.autoRotateSpeed = 10.0;
 				controls.minPolarAngle = Math.PI / 4;
 				controls.maxPolarAngle = Math.PI / 1.5;
 
@@ -162,7 +161,8 @@
 				requestAnimationFrame( animate );
 
 				render();
-				controls.update();
+				head.rotation.x += 0.01;
+				head.rotation.y += 0.01;
 
 			}
 
