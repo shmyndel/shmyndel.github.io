@@ -42,6 +42,12 @@ img {
   max-width: 900px;
 }
 
+.down {
+  position: fixed;
+  left: 4%;
+  down: 10px;
+}
+
 .col {
 }
 
