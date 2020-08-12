@@ -45,7 +45,7 @@ img {
 .down {
   position: fixed;
   left: 4%;
-  down: 10px;
+  bottom: 0;
 }
 
 .col {
