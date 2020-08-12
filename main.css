@@ -1,3 +1,10 @@
+@media screen and (max-width: 600px) {
+  .down {
+    visibility: hidden;
+  }
+}
+
+
 @font-face {
   font-family: 'Rassvet';
   src: url('Rassvet.ttf') format('truetype');
