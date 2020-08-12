@@ -22,13 +22,6 @@ body {
     color:#000000;
 }
 
-img {
-    width: 0.5em;
-    margin-right: 0.2em;
-    margin-left: 0.2em;
-    background-blend-mode:darken;
-}
-
 .soc {
   display: inline;
   margin-right: 1.6em;
