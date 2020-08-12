@@ -38,7 +38,7 @@ body {
 .down {
   position: fixed;
   left: 4%;
-  bottom: 0;
+  bottom: 10px;
 }
 
 .col {
