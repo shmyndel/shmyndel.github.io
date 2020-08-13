@@ -103,3 +103,7 @@ video.fade-out {
   padding-right: 4%;
   will-change: transform;
 }
+
+#second {
+  padding-top: 60px;
+}
