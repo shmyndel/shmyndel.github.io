@@ -21,7 +21,7 @@
 <body>
     <div id = 'container'></div>
     <div id = 'content'>
-      <div class = "chto blur">
+      <div class = "chto blur" id='second'>
         <p> Roman Kirianov is a&nbsp;product&nbsp;designer currently living and working in Moscow</p>
       </div>
       <h2 class = "blur">work 2014—<span class='currentYear'>2018</span></h2>
@@ -44,7 +44,7 @@
       <p class = "soc"><a href = "https://www.facebook.com/shmyndel" target="_blank" class = 'blur'>Facebook</a></p>
       </div>
 	
-      <div class = "down">
+      <div class = "down" onclick="smoothScroll(document.getElementById('second'))" style="cursor: pointer;">
 	      <img src="arrow.png" width="77" height="28">
       </div>
       
